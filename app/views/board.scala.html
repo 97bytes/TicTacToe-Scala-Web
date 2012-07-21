@@ -1,0 +1,68 @@
+@(statusMessage: String, htmlHelper: HtmlHelper)
+
+@import helper._
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tic Tac Toe</title>
+<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/tictactor.css")">
+</head>
+
+<body>
+
+<div class="container">
+  <div >
+      <div class="header1">
+        <p>Es tu turno. Pincha una celda libre.</p>
+        <p><a href="newGame">Reiniciar la partida</a></p>
+      </div>
+      <div class="header2">
+        <img src="@routes.Assets.at("images/player2_180x180.png")" class="playerImage"/><p>&nbsp;-> Tú</p>
+        <img src="@routes.Assets.at("images/player1_180x180.png")"" class="playerImage"/><p>&nbsp;-> El ordenador</p>
+      </div>
+  </div>
+  
+  
+  <div class="content">
+    <div id="board">
+        <div class="cell">
+        	@Html(htmlHelper.renderCell(0))
+        </div>
+        <div class="cell">
+        	@Html(htmlHelper.renderCell(1))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(2))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(3))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(4))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(5))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(6))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(7))
+        </div>
+         <div class="cell">
+        	@Html(htmlHelper.renderCell(8))
+        </div>
+     </div>
+
+    <!-- end .content -->
+  </div>
+    
+<!-- end .container -->
+</div>
+
+</body>
+</html>
+
+

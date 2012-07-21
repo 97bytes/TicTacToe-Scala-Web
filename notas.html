@@ -1,0 +1,116 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+</head>
+<body>
+<h2>INDICE</h2>
+<a href="#descripcion">Descripción</a><br>
+<a href="#install">Instalación del proyecto en Eclipse</a><br>
+<a href="#run">Ejecutar la aplicacion</a><br>
+<a href="#debug">Depurar la aplicacion</a><br>
+<a href="#testcases">Ejecutar las pruebas unitarias</a><br>
+<a href="#historial">Historial de cambios</a><br>
+<br>
+
+<h2><a name="descripcion">DESCRIPCION</a></h2>
+<b>Tic-Tac-Toe Scala Web</b> es el clasico juego de Tic-Tac-Toe, para jugar contra la inteligencia artificial del ordendador. 
+Se juega desde el navegador. Es una prueba de concepto para aprender <a href="http://www.playframework.org/">Play</a>. Caracteristicas principales:
+<ul>
+<li>La aplicación esta implemantada en Scala y usa el framework <a href="http://www.playframework.org/">Play 2.0.1</a></li>
+<li>Tiene pruebas unitarias</li>
+<li>El entorno de desarrollo es Eclipse, con el plugin de Scala. También se usa la línea de comandos para el despliegue</li>
+<li>La ruta de despliegue es: <a href="http://localhost:9000/">http://localhost:9000/</a></li>
+<br>
+</ul>
+
+<table border="0">
+	<tr>
+		<td><img src="Varios/tictactoeweb1.png" align="center" /></td> 
+	</tr>
+	<tr>
+		<td><img src="Varios/tictactoeweb2.png" align="center" /></td>
+	</tr>
+</table>
+
+<h2><a name="install">INSTALACION DEL PROYECTO EN ECLIPSE</a></h2>
+La estrucutra del proyecto fue generada por un comando de un plugin que viene con Play. Ese comando genera los archivos <b>.classpath</b> y las carpetas
+y los acomoda en una estructura reconocida por Eclipse. Desafortunadamente, el fichero <b>.classpath</b> generado tiene referencias absolutas a 
+las librerías del framework. Y por esto el proyecto no es portable. Para corregir las rutas absolutas que aparecen en <b>.classpath</b>:<br>
+<br>
+<b>Paso 1:</b> Abrir una consola de comandos e ir al directorio del proyecto.<br>
+<br> 
+<b>Paso 2:</b> Ejecutar el comando <b>play</b>. Y luego el comando <b>eclipsify</b>. Esto regenerará el fichero y las rutas de las librerías apuntarán
+a la instalación local de Play<br> 
+<br>
+<b>Paso 3:</b> Ahora podemos importar el proyecto en Eclipse normalmente.<br>
+<br>
+<h2><a name="run">EJECUTAR LA APLICACION</a></h2>
+La aplicación se despliega en el servidor que viene embarcado en la instalación de Play y que arranca por la línea de comandos.<br>
+<br>
+<b>Paso 1:</b> Abrir una consola de comandos e ir al directorio del proyecto.<br>
+<br>
+<b>Paso 2:</b> Lanzar el comando <b>play debug run</b>, para que el servidor despliegue la aplicación en modo de depuración.<br>
+<br>
+<img src="Varios/deploy.png" align="center" /><br>
+<br>
+<b>Paso 3:</b> Abrir el navegador en: <a href="http://localhost:9000/">http://localhost:9000/</a><br>
+<br>
+<br>
+<h2><a name="debug">DEPURAR LA APLICACION</a></h2>
+La depuración con el servidor se hace como la depuración de una aplicación remota (con una conexión TCP/IP).<br>
+<br>
+<b>Paso 1:</b> Lanzar la aplicación en modo depuración (ver seccion anterior)<br>
+<br>
+<b>Paso 2:</b> En Eclipse, ir al menú <b>Run -> Debug Configurations...</b>. Elegir la opción
+<b>Remote Java Application</b> y crear una nueva configuración, como muestra la figura (el puerto es <b>9999</b>). 
+Luego, pinchar en <b>Debug</b> y cerrar. En el debugger aparecerá el proceso del servidor de Play.<br>
+<br>
+<img src="Varios/debug_eclipse.png" align="center" /><br>
+<br>
+<b>Paso 3:</b> Poner breakpoints y depurar normalmente.<br> 
+<br>
+<b>Nota:</b> En algunos casos, parece que se pierde la sincronización entre la compilacion de Eclipse y la que hace Play. Si es así desconectar el debugger y volver a conectarlo. 
+
+<h2><a name="testcases">EJECUTAR LAS PRUEBAS UNITARIAS</a></h2>
+Para lanzar las pruebas unitarias, en Eclipse seleccionar <b>tictactoe.AllTests.java</b> y en el menú emergente elegir la opción <b>Debug -> JUnit Test</b>. Los tests 
+deberían pasar sin errores. Para depurar, alcanza con poner breakpoints y el debugger de Eclipse los intercepta!<br>
+<br>
+Notar que aunque los tests son clases de Scala (BoardTestCase.scala), las suites son clases Java (AllTests.java).<br>
+<br>
+<table>
+	<tr>
+		<td><img src="Varios/testcase1.png" align="top" /></td>
+		<td><img src="Varios/testcase2.png" align="top"/></td>
+	</tr>
+</table>
+
+<br>
+<br>
+
+<h2><a name="historial">HISTORIAL DE CAMBIOS</a></h2>
+<table border="1">
+<tr>
+	<td align="center"><b>Versión</b></td>
+	<td align="center"><b>Comentarios</b></td>
+</tr>
+<tr>
+	<td align="center">1.0</td>
+	<td>
+	- Fecha: 2/07/2012<br>
+	- Toda la funcionalidad: jugar desde el navegador<br>
+	- Ejecución de test cases en Eclipse<br>
+	</td>
+</tr>
+<tr>
+	<td align="center">2.0</td>
+	<td>
+	- Fecha: 20/07/2012<br>
+	- La capa de presentación se ha reimplementado usando CSS y HTML. La maquetación se hizon con Dreamweaver CS4.<br>
+	</td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+</body>
+</html>
